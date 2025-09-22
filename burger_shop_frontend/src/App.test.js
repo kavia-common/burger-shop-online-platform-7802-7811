@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders navbar brand', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const brand = screen.getByText(/Ocean Burger/i);
+  expect(brand).toBeInTheDocument();
+});
+
+test('renders menu section title', async () => {
+  render(<App />);
+  const menu = await screen.findAllByText(/Menu/i);
+  expect(menu.length).toBeGreaterThan(0);
 });

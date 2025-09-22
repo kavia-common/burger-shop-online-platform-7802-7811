@@ -1,49 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useMemo, useState } from 'react';
 import './App.css';
+import './styles.css';
+import { applyCSSVars } from './theme';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Menu from './pages/Menu';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import OrderSidebar from './components/OrderSidebar';
+import { useCart } from './hooks/useCart';
 
 // PUBLIC_INTERFACE
-function App() {
-  const [theme, setTheme] = useState('light');
+export default function App() {
+  /** App entry for Ocean Burger with navigation, menu, and order management */
+  const [route, setRoute] = useState('home');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const cart = useCart();
 
-  // Effect to apply theme to document element
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
+    applyCSSVars();
+  }, []);
 
-  // PUBLIC_INTERFACE
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
+  const onNavigate = (to) => setRoute(to);
+
+  const content = useMemo(() => {
+    switch (route) {
+      case 'menu':
+        return <Menu cartMap={cart.map} onAdd={cart.add} onRemove={cart.remove} />;
+      case 'about':
+        return <About />;
+      case 'contact':
+        return <Contact />;
+      case 'home':
+      default:
+        return <Home onOrder={() => setSidebarOpen(true)} />;
+    }
+  }, [route, cart.map]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-shell">
+      <Navbar onNavigate={onNavigate} />
+      {content}
+      {/* Helper anchor for hero CTA */}
+      <div id="menu" />
+      {route !== 'menu' && <Menu cartMap={cart.map} onAdd={cart.add} onRemove={cart.remove} />}
+      <Footer />
+      <button className="fab" onClick={() => setSidebarOpen(true)} aria-label="Open order">
+        🛒 <span className="badge-pill">{cart.count}</span>
+      </button>
+      <OrderSidebar
+        open={sidebarOpen}
+        itemsMap={cart.map}
+        onClose={() => setSidebarOpen(false)}
+        onAdd={cart.add}
+        onRemove={cart.remove}
+      />
     </div>
   );
 }
-
-export default App;

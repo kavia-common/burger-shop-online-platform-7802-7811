@@ -1,82 +1,57 @@
-# Lightweight React Template for KAVIA
+# Ocean Burger - React Frontend
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern, minimalist burger shop frontend built with React, following the "Ocean Professional" design theme (blue and amber accents, rounded corners, subtle shadows, and soft gradients).
 
-## Features
+## Project Structure
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- src/
+  - api/
+    - client.js — REST API placeholders (GET/POST) using REACT_APP_API_BASE_URL
+    - orders.js — Menu retrieval and order placement (with mock fallback)
+  - components/
+    - Navbar.jsx — Top navigation with logo and links
+    - Footer.jsx — Footer with contact and hours
+    - MenuCard.jsx — Menu item card with add/remove
+    - OrderSidebar.jsx — Slide-in order details and submit
+    - Modal.jsx — Generic modal (optional)
+  - hooks/
+    - useCart.js — Cart state + session persistence
+  - pages/
+    - Home.jsx — Hero landing section
+    - Menu.jsx — Menu grid, loads items via API
+    - About.jsx — Brand story and features
+    - Contact.jsx — Contact information + simple form
+  - theme.js — Theme variables and CSS variable injector
+  - styles.css — Ocean Professional base styles
+  - App.js — App shell wiring navigation and cart
+  - index.js — React entry point
 
-## Getting Started
+## Scripts
 
-In the project directory, you can run:
+- `npm start` — Start dev server
+- `npm run build` — Production build
+- `npm test` — Tests (from CRA template)
 
-### `npm start`
+## Environment
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create `.env` (or set env vars in your environment):
 
-### `npm test`
-
-Launches the test runner in interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
+```
+REACT_APP_API_BASE_URL=https://your-backend.example.com
 ```
 
-### Components
+If not set, the app will use `https://api.example.com` and will gracefully fallback to mocked menu/order responses for demo purposes.
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## Design Guidelines
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+- Modern, minimalist layout
+- Blue (primary) and amber (secondary) accents
+- Rounded corners, subtle shadows
+- Soft gradients, clean spacing, smooth transitions
 
-## Learn More
+## Integration Notes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Replace API placeholders in `src/api/*` with your backend endpoints.
+- The UI uses accessible HTML controls and is fully responsive.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy your burgers! 🍔
