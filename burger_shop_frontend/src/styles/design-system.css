@@ -1,0 +1,214 @@
+:root {
+  /* Colors from Figma design_system */
+  --clr-primary-bg: #12372a; /* color_12372a */
+  --clr-black: #000000;      /* color_000000 */
+  --clr-cream: #fbfada;      /* color_fbfada */
+  --clr-sage: #adbc9f;       /* color_adbc9f */
+  --clr-white: #ffffff;      /* color_ffffff */
+  --clr-gray-200: #d9d9d9;   /* color_d9d9d9 */
+  --clr-gray-800: #2a2a2a;   /* color_2a2a2a */
+  --clr-gray-700: #3c3b3b;   /* color_3c3b3b */
+
+  /* Radii */
+  --radius-5: 5px;   /* style_12 */
+  --radius-20: 20px; /* style_4, style_8, style_9 */
+  --radius-25: 25px; /* style_6 */
+
+  /* Typography families */
+  --font-sansita: "Sansita Swashed", ui-serif, serif;
+  --font-lexend: "Lexend Zetta", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+
+  /* Sizes / line-heights matching Figma */
+  --fs-display-144: 144px; --lh-display-144: 172.8px; --fw-display: 700;
+  --fs-h1-50: 50px;        --lh-h1-50: 62.5px;        --fw-h1: 700;
+  --fs-title-20: 20px;     --lh-title-20: 25px;       --fw-title: 700;
+  --fs-sansita-45: 45px;   --lh-sansita-45: 54px;     --fw-sansita-700: 700;
+  --fs-sansita-25: 25px;   --lh-sansita-25: 30px;     --fw-sansita-400: 400; --fw-sansita-700: 700;
+  --fs-body-15: 15px;      --lh-body-15: 18.75px;     --fw-body-400: 400; --fw-body-200: 200;
+  --fs-caption-8: 8px;     --lh-caption-8: 10px;      --fw-caption-500: 500;
+  --fs-small-11: 11px;     --lh-small-11: 13.75px;    --fw-small-700: 700;
+
+  /* Spacing scale: selected keys */
+  --space-2: 2px;
+  --space-8: 8.4px;
+  --space-9: 9px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-15: 15px;
+  --space-17: 17px;
+  --space-18: 18px;
+  --space-19: 19px;
+  --space-20: 20px;
+  --space-25: 25px;
+  --space-28: 28px;
+  --space-29: 29px;
+  --space-30: 30px;
+  --space-31: 31px;
+  --space-33: 33px;
+  --space-40: 40px;
+  --space-42: 42px;
+  --space-50: 50px;
+  --space-54: 54px;
+  --space-58: 58px;
+  --space-59: 59px;
+  --space-63: 63px;
+  --space-68: 68px;
+  --space-71: 71px;
+  --space-74: 74px;
+  --space-80: 80px;
+  --space-100: 100px;
+  --space-112: 112px;
+  --space-120: 120px;
+  --space-126: 126px;
+  --space-133: 133px;
+  --space-146: 146px;
+  --space-150: 150px;
+  --space-151: 151px;
+  --space-152: 152px;
+  --space-157: 157px;
+  --space-169: 169px;
+  --space-173: 173px;
+  --space-175: 175px;
+  --space-188: 188px;
+  --space-191: 191px;
+  --space-198: 198px;
+  --space-200: 200px;
+  --space-206: 206px;
+  --space-209: 209px;
+  --space-214: 214px;
+  --space-218: 218px;
+  --space-225: 225px;
+  --space-229: 229px;
+  --space-230: 230px;
+  --space-232: 232px;
+  --space-236: 236px;
+  --space-240: 240px;
+  --space-246: 246px;
+  --space-250: 250px;
+  --space-261: 261px;
+  --space-262: 262px;
+  --space-263: 263px;
+  --space-274: 274px;
+  --space-275: 275px;
+  --space-288: 288px;
+  --space-360: 360px;
+  --space-385: 385px;
+  --space-395: 395px;
+  --space-400: 400px;
+
+  /* Utility composite tokens for quick use */
+  --text-on-dark-cream: var(--clr-cream);
+  --text-on-dark-white: var(--clr-white);
+  --text-on-light: var(--clr-gray-800);
+
+  /* Shadows (none specified in DS; keep neutral options) */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+/* Font utility classes derived from Figma text styles */
+.font-display-cream {
+  font-family: var(--font-sansita);
+  font-size: var(--fs-display-144);
+  line-height: var(--lh-display-144);
+  font-weight: var(--fw-display);
+  color: var(--clr-cream);
+  text-align: center;
+}
+.font-h1-cream {
+  font-family: var(--font-lexend);
+  font-size: var(--fs-h1-50);
+  line-height: var(--lh-h1-50);
+  font-weight: var(--fw-h1);
+  color: var(--clr-cream);
+  text-align: center;
+}
+.font-h1-sage {
+  font-family: var(--font-lexend);
+  font-size: var(--fs-h1-50);
+  line-height: var(--lh-h1-50);
+  font-weight: var(--fw-h1);
+  color: var(--clr-sage);
+  text-align: center;
+}
+.font-h1-white {
+  font-family: var(--font-lexend);
+  font-size: var(--fs-h1-50);
+  line-height: var(--lh-h1-50);
+  font-weight: var(--fw-h1);
+  color: var(--clr-white);
+  text-align: center;
+}
+.font-title-20 {
+  font-family: var(--font-lexend);
+  font-size: var(--fs-title-20);
+  line-height: var(--lh-title-20);
+  font-weight: var(--fw-title);
+}
+.font-sansita-45-cream {
+  font-family: var(--font-sansita);
+  font-size: var(--fs-sansita-45);
+  line-height: var(--lh-sansita-45);
+  font-weight: var(--fw-sansita-700);
+  color: var(--clr-cream);
+  text-align: center;
+}
+.font-sansita-25 {
+  font-family: var(--font-sansita);
+  font-size: var(--fs-sansita-25);
+  line-height: var(--lh-sansita-25);
+  font-weight: var(--fw-sansita-400);
+}
+.font-body-15 {
+  font-family: var(--font-lexend);
+  font-size: var(--fs-body-15);
+  line-height: var(--lh-body-15);
+  font-weight: var(--fw-body-400);
+}
+.font-body-15-light {
+  font-family: var(--font-lexend);
+  font-size: var(--fs-body-15);
+  line-height: var(--lh-body-15);
+  font-weight: var(--fw-body-200);
+}
+.font-caption-8 {
+  font-family: var(--font-lexend);
+  font-size: var(--fs-caption-8);
+  line-height: var(--lh-caption-8);
+  font-weight: var(--fw-caption-500);
+}
+
+/* Background styles mapped from Figma style_x */
+.bg-primary { background-color: var(--clr-primary-bg); }
+.bg-black { background-color: var(--clr-black); }
+.bg-cream { background-color: var(--clr-cream); }
+.bg-sage { background-color: var(--clr-sage); }
+.bg-white { background-color: var(--clr-white); }
+.bg-gray-200 { background-color: var(--clr-gray-200); }
+.bg-gray-800 { background-color: var(--clr-gray-800); }
+.bg-gray-700 { background-color: var(--clr-gray-700); }
+
+/* Radii utilities */
+.radius-5 { border-radius: var(--radius-5); }
+.radius-20 { border-radius: var(--radius-20); }
+.radius-25 { border-radius: var(--radius-25); }
+
+/* Outline style for style_12 */
+.outline-inverse {
+  background-color: var(--clr-black);
+  border: 2px solid var(--clr-white);
+  border-radius: var(--radius-5);
+  color: var(--clr-white);
+}
+
+/* Basic reset defaults aligning with tokens */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: var(--text-on-light);
+  font-family: var(--font-lexend);
+  background: var(--clr-white);
+}

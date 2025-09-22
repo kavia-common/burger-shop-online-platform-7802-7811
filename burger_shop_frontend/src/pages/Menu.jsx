@@ -4,34 +4,38 @@ import MenuCard from '../components/MenuCard';
 
 // PUBLIC_INTERFACE
 export default function Menu({ cartMap, onAdd, onRemove }) {
-  /** Menu grid section that loads items and supports add/remove */
+  /** Menu grid section using Figma DS grid spacing and tokens */
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
-    fetchMenu().then((data) => {
-      if (isMounted) {
-        setItems(data || []);
-        setLoading(false);
-      }
-    }).catch(() => setLoading(false));
-    return () => { isMounted = false; };
+    fetchMenu()
+      .then((data) => {
+        if (isMounted) {
+          setItems(data || []);
+          setLoading(false);
+        }
+      })
+      .catch(() => setLoading(false));
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   if (loading) {
     return (
-      <section id="menu" className="container section">
-        <h2 className="section-title">Menu</h2>
-        <p className="muted">Loading menu…</p>
+      <section id="menu" className="container section-ds">
+        <h2 className="font-title-20" style={{ marginBottom: 'var(--space-20)' }}>Menu</h2>
+        <p className="font-body-15" style={{ color: 'var(--clr-gray-700)' }}>Loading menu…</p>
       </section>
     );
   }
 
   return (
-    <section id="menu" className="container section">
-      <h2 className="section-title">Menu</h2>
-      <div className="grid">
+    <section id="menu" className="container section-ds">
+      <h2 className="font-title-20" style={{ marginBottom: 'var(--space-20)' }}>Menu</h2>
+      <div className="grid-ds">
         {items.map((it) => (
           <MenuCard
             key={it.id}

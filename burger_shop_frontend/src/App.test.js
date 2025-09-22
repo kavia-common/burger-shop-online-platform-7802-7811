@@ -3,7 +3,7 @@ import App from './App';
 
 test('renders navbar brand', () => {
   render(<App />);
-  const brand = screen.getByText(/Ocean Burger/i);
+  const brand = screen.getByText(/Burger House/i);
   expect(brand).toBeInTheDocument();
 });
 

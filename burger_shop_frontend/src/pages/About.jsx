@@ -2,36 +2,40 @@ import React from 'react';
 
 // PUBLIC_INTERFACE
 export default function About() {
-  /** About section with brief brand story */
+  /** About section styled to Figma DS */
   return (
-    <section className="container section">
-      <h2 className="section-title">About Us</h2>
-      <p className="body">
-        At Ocean Burger, we blend coastal vibes with gourmet craft. Our chefs grill
-        every patty to perfection and layer fresh toppings for a vibrant, modern bite.
-        From smoky BBQ to spicy chicken and veggie delights, our menu is designed for
-        every craving.
+    <section className="container section-ds">
+      <h2 className="font-title-20" style={{ marginBottom: 'var(--space-20)' }}>About Us</h2>
+      <p className="font-body-15" style={{ color: 'var(--clr-gray-700)' }}>
+        At Burger House, we blend modern craft with fresh ingredients. Our chefs grill
+        every patty to perfection and layer vibrant toppings for a memorable bite.
       </p>
-      <div className="info-cards">
-        <div className="info">
-          <div className="info-icon">🌊</div>
+      <div className="info-cards-ds">
+        <div className="info-ds radius-20">
+          <div className="info-icon-ds bg-cream">🌿</div>
           <div>
-            <h4>Fresh Ingredients</h4>
-            <p className="muted">Sourced daily for peak flavor and quality.</p>
+            <h4 className="font-title-20" style={{ fontSize: '18px' }}>Fresh Ingredients</h4>
+            <p className="font-body-15" style={{ color: 'var(--clr-gray-700)' }}>
+              Sourced daily for peak flavor and quality.
+            </p>
           </div>
         </div>
-        <div className="info">
-          <div className="info-icon">⭐</div>
+        <div className="info-ds radius-20">
+          <div className="info-icon-ds bg-cream">⭐</div>
           <div>
-            <h4>Made to Order</h4>
-            <p className="muted">Your burger, crafted exactly how you like it.</p>
+            <h4 className="font-title-20" style={{ fontSize: '18px' }}>Made to Order</h4>
+            <p className="font-body-15" style={{ color: 'var(--clr-gray-700)' }}>
+              Your burger, crafted exactly how you like it.
+            </p>
           </div>
         </div>
-        <div className="info">
-          <div className="info-icon">⚡</div>
+        <div className="info-ds radius-20">
+          <div className="info-icon-ds bg-cream">⚡</div>
           <div>
-            <h4>Fast & Friendly</h4>
-            <p className="muted">Quick service without compromising taste.</p>
+            <h4 className="font-title-20" style={{ fontSize: '18px' }}>Fast & Friendly</h4>
+            <p className="font-body-15" style={{ color: 'var(--clr-gray-700)' }}>
+              Quick service without compromising taste.
+            </p>
           </div>
         </div>
       </div>
